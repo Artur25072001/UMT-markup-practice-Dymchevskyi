@@ -1,13 +1,13 @@
 export function initMenu() {
-  const modalOpenBtn = document.querySelector('.modal-open_btn');
+  const menuOpenBtn = document.querySelector('.menu-open_btn');
   const MenuContainer = document.querySelector('.menu-container');
-  const modalCloseBtn = document.querySelector('.modal-close_btn');
+  const menuCloseBtn = document.querySelector('.menu-close_btn');
 
-  modalCloseBtn.addEventListener('click', () => {
+  menuCloseBtn.addEventListener('click', () => {
     MenuContainer.classList.remove('is-active');
   });
 
-  modalOpenBtn.addEventListener('click', () => {
+  menuOpenBtn.addEventListener('click', () => {
     MenuContainer.classList.toggle('is-active');
   });
 }

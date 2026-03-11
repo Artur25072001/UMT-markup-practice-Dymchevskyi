@@ -1,4 +1,4 @@
-.modal-open_btn {
+.menu-open_btn {
   background: none;
   border: none;
   cursor: pointer;
@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: center;
 }
-.modal-close_btn {
+.menu-close_btn {
   background: none;
   border: none;
   cursor: pointer;
@@ -30,6 +30,11 @@
   width: 100%;
   max-width: 335px;
   height: 40px;
+  cursor: default;
+}
+.nav-btn_link {
+  color: #030c01;
+  cursor: pointer;
 }
 .nav-btn--desktop {
   display: none;
@@ -74,12 +79,12 @@
   color: #030c01;
 }
 
-.modal-open-svg {
+.menu-open-svg {
   width: 24px;
   height: 24px;
 }
 
-.modal-close-svg {
+.menu-close-svg {
   width: 14px;
   height: 14px;
 }
@@ -115,7 +120,7 @@
 }
 
 @media (min-width: 1440px) {
-  .modal-open_btn,
+  .menu-open_btn,
   .menu-header,
   .nav-btn--mobile,
   .menu-logo {

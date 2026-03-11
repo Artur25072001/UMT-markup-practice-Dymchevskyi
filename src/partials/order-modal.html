@@ -1,7 +1,11 @@
-<div class="modal-background">
-  <div class="order-modal_container container">
-    <span class="order-modal_close"></span>
-    <h2 class="order-modal_header"></h2>
+<div class="order-background">
+  <div class="order-modal modal-container">
+    <button type="button" class="modal-close_btn order-close_btn">
+      <svg class="modal-close-svg">
+        <use href="/img/sprite.svg#icon-close"></use>
+      </svg>
+    </button>
+    <h2 class="order-modal_header">Order</h2>
     <form action="" class="order-modal_form">
       <label class="order-modal_label" for="name">Name*</label>
       <input
@@ -15,6 +19,8 @@
       <label class="order-modal_label" for="phone">Phone*</label>
       <input
         class="order-modal_input"
+        pattern="[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$"
+        title="Format: +1 (555) 123-4567 or 555-123-4567"
         placeholder="+1 (555) 123-4567"
         type="tel"
         id="phone"
@@ -36,7 +42,7 @@
         id="message"
         name="message"
       ></textarea>
-      <button type="submit" class="order-modal_btn">Go to Checkout</button>
+      <button type="submit" class="order-modal_btn btn">Go to Checkout</button>
     </form>
   </div>
 </div>

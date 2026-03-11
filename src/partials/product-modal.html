@@ -1,25 +1,34 @@
-<div class="modal-backhround">
-  <div class="product-modal-container container">
-    <img src="" alt="" class="product-modal-img" />
-    <h2 class="product-modal_header">Spring Elegance</h2>
-    <p class="product-modal_price">&dollar;35</p>
-    <p class="product-modal_description">
-      Each stem is carefully selected to create a bouquet that radiates
-      freshness, elegance, and the gentle charm of spring. Whether you’re
-      celebrating a birthday, sending love, or simply brightening someone’s day,
-      this arrangement is sure to bring warm smiles and lasting impressions.
-    </p>
-    <button class="product-modal_btn">Buy now</button
-    ><span class="product-modal_close"></span>
-    <label for="count">Количество:</label>
-    <input
-      type="number"
-      id="count"
-      class="product-modal_count"
-      name="count"
-      min="1"
-      max="100"
-      value="1"
-    />
+<div class="product-background">
+  <div class="modal-container product-modal">
+    <button type="button" class="modal-close_btn product-close_btn">
+      <svg class="modal-close-svg">
+        <use href="/img/sprite.svg#icon-close"></use>
+      </svg>
+    </button>
+    <img src="" alt="flower" class="product-modal-img" />
+    <div class="product-content">
+      <h2 class="product-modal_header">Spring Elegance</h2>
+      <p class="product-modal_price">&dollar;35</p>
+      <p class="product-modal_description">
+        Each stem is carefully selected to create a bouquet that radiates
+        freshness, elegance, and the gentle charm of spring. Whether you’re
+        celebrating a birthday, sending love, or simply brightening someone’s
+        day, this arrangement is sure to bring warm smiles and lasting
+        impressions.
+      </p>
+      <div class="btn-container">
+        <button class="product-modal_btn btn">Buy now</button>
+        <label class="product-modal_label" for="count">Количество:</label>
+        <input
+          type="number"
+          id="count"
+          class="product-modal_count"
+          name="count"
+          min="1"
+          max="100"
+          value="1"
+        />
+      </div>
+    </div>
   </div>
 </div>

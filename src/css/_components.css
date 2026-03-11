@@ -1,7 +1,6 @@
 .btn {
   border-radius: 100px;
   border: none;
-  cursor: pointer;
   font-family: 'Roboto-Medium', sans-serif;
   background: linear-gradient(100deg, #e8e81c 0%, #42ed13 100%);
 }
