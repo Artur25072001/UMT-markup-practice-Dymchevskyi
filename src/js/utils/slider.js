@@ -5,75 +5,76 @@ export function initSlider() {
   const rightBtn = document.querySelectorAll('.btn-arrow')[1];
   const dots = document.querySelectorAll('.slide-item');
 
-  if (!list || !leftBtn || !rightBtn || !dots.length) return;
+  if (!list || !leftBtn || !rightBtn || !items.length) return;
 
-  const TOTAL_PAGES = 6;
+  function getCardsPerView() {
+    const width = window.innerWidth;
+    if (width >= 1440) return 3;
+    if (width >= 768) return 2;
+    return 1;
+  }
 
-  // Функция для обновления состояния кнопок и точек
+  function getScrollAmount() {
+    const itemWidth = items[0].offsetWidth;
+    const style = getComputedStyle(list);
+    const gap = parseFloat(style.gap) || 24;
+
+    return (itemWidth + gap) * getCardsPerView();
+  }
+
   function updateUI() {
     const scrollLeft = list.scrollLeft;
-    const maxScroll = list.scrollWidth - list.clientWidth;
 
-    // Вычисляем текущий индекс (0-5) на основе процента прокрутки
-    // Это позволяет точкам переключаться, даже когда скроллишь пальцем
-    const scrollPercentage = maxScroll > 0 ? scrollLeft / maxScroll : 0;
-    const currentIndex = Math.min(
-      Math.round(scrollPercentage * (TOTAL_PAGES - 1)),
-      TOTAL_PAGES - 1
-    );
+    const maxScroll = Math.ceil(list.scrollWidth - list.clientWidth);
 
-    // Обновляем активную точку
-    dots.forEach((dot, index) => {
-      dot.classList.toggle('slide-active', index === currentIndex);
-    });
+    if (dots.length) {
+      const scrollPercentage = maxScroll > 0 ? scrollLeft / maxScroll : 0;
+      const currentIndex = Math.min(
+        Math.round(scrollPercentage * (dots.length - 1)),
+        dots.length - 1
+      );
 
-    // Валидация кнопок (с небольшим запасом в 5px для точности браузеров)
-    leftBtn.disabled = scrollLeft <= 5;
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('slide-active', index === currentIndex);
+      });
+    }
+
+    leftBtn.disabled = Math.floor(scrollLeft) <= 5;
     leftBtn.style.opacity = leftBtn.disabled ? '0.3' : '1';
     leftBtn.style.cursor = leftBtn.disabled ? 'default' : 'pointer';
 
-    rightBtn.disabled = scrollLeft >= maxScroll - 5;
+    rightBtn.disabled = Math.ceil(scrollLeft) >= maxScroll - 5;
     rightBtn.style.opacity = rightBtn.disabled ? '0.3' : '1';
     rightBtn.style.cursor = rightBtn.disabled ? 'default' : 'pointer';
   }
 
-  // Функция для перемещения к конкретной "странице"
-  function scrollToPage(pageIndex) {
-    const maxScroll = list.scrollWidth - list.clientWidth;
-    const targetScroll = (maxScroll / (TOTAL_PAGES - 1)) * pageIndex;
-
-    list.scrollTo({
-      left: targetScroll,
+  leftBtn.addEventListener('click', () => {
+    list.scrollBy({
+      left: -getScrollAmount(),
       behavior: 'smooth',
     });
-  }
-
-  // Слушатели для стрелок
-  leftBtn.addEventListener('click', () => {
-    const maxScroll = list.scrollWidth - list.clientWidth;
-    const scrollStep = maxScroll / (TOTAL_PAGES - 1);
-    // Определяем текущую страницу и вычитаем 1
-    const currentPage = Math.round(list.scrollLeft / scrollStep);
-    scrollToPage(currentPage - 1);
   });
 
   rightBtn.addEventListener('click', () => {
-    const maxScroll = list.scrollWidth - list.clientWidth;
-    const scrollStep = maxScroll / (TOTAL_PAGES - 1);
-    // Определяем текущую страницу и прибавляем 1
-    const currentPage = Math.round(list.scrollLeft / scrollStep);
-    scrollToPage(currentPage + 1);
+    list.scrollBy({
+      left: getScrollAmount(),
+      behavior: 'smooth',
+    });
   });
 
-  // Слушатели для точек
   dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => scrollToPage(index));
+    dot.addEventListener('click', () => {
+      const maxScroll = list.scrollWidth - list.clientWidth;
+      const targetScroll = (maxScroll / (dots.length - 1)) * index;
+      list.scrollTo({
+        left: targetScroll,
+        behavior: 'smooth',
+      });
+    });
   });
 
-  // Главное: обновляем интерфейс при любом скролле (кнопки, пальцы, Resize)
   list.addEventListener('scroll', updateUI);
   window.addEventListener('resize', updateUI);
 
-  // Инициализация при загрузке
   updateUI();
 }

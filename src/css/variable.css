@@ -1,0 +1,38 @@
+:root {
+  /* color */
+  --primary-color: #030c01;
+  --primary-color-rgba: rgba(3, 12, 1, 0.15);
+  --primary-color-rgba-light: rgba(3, 12, 1, 0.2);
+  --footer-bg: #eeee60;
+  --btn-gradient: linear-gradient(100deg, #e8e81c 0%, #42ed13 100%);
+  --white: #fff;
+  --modal-bg: rgba(0, 0, 0, 0.25);
+  --error-color: #af0000;
+  --placeholder-bg: bisque;
+
+  /* radius and gap */
+  --border-radius: 16px;
+  --border-radius-small: 12px;
+  --gap: 24px;
+  --gap-small: 8px;
+
+  /* height */
+  --btn-height: 44px;
+  --input-height: 40px;
+
+  /* font */
+  --font-hanuman: 'Hanuman-Regular', serif;
+  --font-roboto-medium: 'Roboto-Medium', sans-serif;
+  --font-roboto-semibold: 'Roboto-SemiBold', sans-serif;
+
+  /* opacity */
+  --opacity-hover: 0.6;
+  --opacity-active: 0.4;
+  --opacity-disabled: 0.2;
+  --opacity-half: 0.5;
+  --opacity-full: 1;
+
+  /* transition */
+  --transition-opacity: 0.4s opacity ease-in-out;
+  --transition-all: all 0.3s ease;
+}

@@ -1,6 +1,8 @@
+@import 'variable.css';
+
 .bestseller-list {
   display: flex;
-  gap: 24px;
+  gap: var(--gap);
   max-width: 335px;
   overflow-x: auto;
   scroll-behavior: smooth;
@@ -21,7 +23,7 @@
 }
 
 .bestseller-header {
-  font-family: 'Hanuman-Regular', serif;
+  font-family: var(--font-hanuman);
   font-size: 32px;
   font-weight: 400;
   line-height: 1.2;
@@ -29,7 +31,7 @@
   margin-bottom: 32px;
 }
 .bestseller-item_header {
-  font-family: 'Roboto-Medium', sans-serif;
+  font-family: var(--font-roboto-medium);
   font-size: 18px;
   font-weight: 500;
 }
@@ -37,15 +39,15 @@
   font-size: 14px;
 }
 .bestseller-item_price {
-  font-family: 'Roboto-Medium', sans-serif;
+  font-family: var(--font-roboto-medium);
   font-size: 20px;
   font-weight: 500;
 }
 .bestseller-item_img {
   width: 335px;
   height: 320px;
-  border-radius: 16px;
-  background-color: bisque;
+  border-radius: var(--border-radius);
+  background-color: var(--placeholder-bg);
   margin-bottom: 16px;
 }
 .navigation-container {
@@ -55,13 +57,13 @@
 }
 .slide-list {
   display: flex;
-  gap: 8px;
+  gap: var(--gap-small);
 }
 .slide-item {
   height: 8px;
   width: 8px;
   border-radius: 50%;
-  background-color: rgba(3, 12, 1, 0.2);
+  background-color: var(--primary-color-rgba-light);
 }
 .slide-active {
   background-color: #030c01;
@@ -73,7 +75,7 @@
   }
   .bestseller-list {
     display: flex;
-    gap: 24px;
+    gap: var(--gap);
     max-width: 704px;
   }
   .bestseller-item_img {

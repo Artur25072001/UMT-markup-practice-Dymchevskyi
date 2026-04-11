@@ -1,3 +1,5 @@
+@import 'variable.css';
+
 .hero {
   background-image: url('../img/hero-image.jpg');
   background-repeat: no-repeat;
@@ -7,7 +9,7 @@
 }
 .hero-header {
   margin-bottom: 24px;
-  font-family: 'Hanuman-Regular', serif;
+  font-family: var(--font-hanuman);
   font-size: 32px;
   line-height: 1.2;
   font-weight: 400;
@@ -22,11 +24,11 @@
 }
 .hero-btn {
   width: 100%;
-  height: 44px;
+  height: var(--btn-height);
   cursor: default;
 }
 .hero-btn_link {
-  color: #030c01;
+  color: var(--primary-color);
   cursor: pointer;
 }
 

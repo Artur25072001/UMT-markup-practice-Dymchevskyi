@@ -1,7 +1,9 @@
+@import 'variable.css';
+
 .bouqets-list {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: var(--gap);
   margin-bottom: 40px;
 }
 .bouqets-btn {
@@ -11,14 +13,14 @@
 }
 .bouqets-item_img {
   height: 296px;
-  border-radius: 16px;
-  background-color: bisque;
+  border-radius: var(--border-radius);
+  background-color: var(--placeholder-bg);
   margin-bottom: 16px;
 }
 .bouqets-header {
   font-size: 34px;
   font-weight: 400;
-  font-family: 'Hanuman-Regular', serif;
+  font-family: var(--font-hanuman);
   line-height: 1.2;
   text-align: center;
   margin-bottom: 8px;
@@ -29,7 +31,7 @@
   margin-bottom: 32px;
 }
 .bouqets-item_header {
-  font-family: 'Roboto-Medium', sans-serif;
+  font-family: var(--font-roboto-medium);
   font-size: 18px;
   font-weight: 500;
   text-align: center;
@@ -40,7 +42,7 @@
   margin-bottom: 8px;
 }
 .bouqets-item_price {
-  font-family: 'Roboto-Medium', sans-serif;
+  font-family: var(--font-roboto-medium);
   font-size: 20px;
   font-weight: 500;
   text-align: center;

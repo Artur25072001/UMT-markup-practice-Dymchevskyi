@@ -1,25 +1,27 @@
+@import 'variable.css';
+
 .btn {
   border-radius: 100px;
   border: none;
-  font-family: 'Roboto-Medium', sans-serif;
-  background: linear-gradient(100deg, #e8e81c 0%, #42ed13 100%);
-  transition: all 0.3s ease;
+  font-family: var(--font-roboto-medium);
+  background: var(--btn-gradient);
+  transition: var(--transition-all);
 }
 .btn:hover {
-  opacity: 0.5;
+  opacity: var(--opacity-half);
 }
 .btn:disabled {
-  opacity: 0.2;
+  opacity: var(--opacity-disabled);
 }
 .btn:active {
   background: #4e544d;
-  color: #fff;
-  opacity: 1;
+  color: var(--white);
+  opacity: var(--opacity-full);
 }
 .btn:active .nav-btn_link,
 .btn:active .hero-btn_link {
   color: #fff;
-  opacity: 1;
+  opacity: var(--opacity-full);
 }
 
 .btn-arrow_container {
@@ -34,10 +36,10 @@
   height: 48px;
   border-radius: 100px;
   background-color: transparent;
-  border: 1px solid rgba(3, 12, 1, 0.15);
+  border: 1px solid var(--primary-color-rgba);
 }
 .arrow-svg {
   width: 14px;
   height: 14px;
-  fill: #030c01;
+  fill: var(--primary-color);
 }

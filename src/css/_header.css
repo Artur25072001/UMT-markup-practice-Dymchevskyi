@@ -1,3 +1,5 @@
+@import 'variable.css';
+
 .menu-open_btn {
   background: none;
   border: none;
@@ -29,11 +31,11 @@
   transition: 0.4s all ease-in-out;
   width: 100%;
   max-width: 335px;
-  height: 40px;
+  height: var(--input-height);
   cursor: default;
 }
 .nav-btn_link {
-  color: #030c01;
+  color: var(--primary-color);
   cursor: pointer;
 }
 .nav-btn--desktop {
@@ -76,18 +78,18 @@
   margin: 0 auto 40px auto;
 }
 .nav-link {
-  color: #030c01;
-  transition: 0.4s opacity ease-in-out;
-  opacity: 1;
+  color: var(--primary-color);
+  transition: var(--transition-opacity);
+  opacity: var(--opacity-full);
 }
 .nav-link:hover {
-  opacity: 0.6;
+  opacity: var(--opacity-hover);
 }
 .nav-link:active {
-  opacity: 0.4;
+  opacity: var(--opacity-active);
 }
 .nav-link:disabled {
-  opacity: 0.2;
+  opacity: var(--opacity-disabled);
 }
 
 .menu-open-svg {

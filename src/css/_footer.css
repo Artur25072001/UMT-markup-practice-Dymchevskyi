@@ -1,8 +1,10 @@
+@import 'variable.css';
+
 .footer {
-  background-color: #eeee60;
+  background-color: var(--footer-bg);
 }
 .footer-content {
-  border-bottom: 1px solid rgba(3, 12, 1, 0.15);
+  border-bottom: 1px solid var(--primary-color-rgba);
   padding: 48px 0 32px 0;
   display: flex;
   flex-direction: column;
@@ -31,30 +33,35 @@
   height: auto;
 }
 .footer-link {
-  color: #030c01;
-  transition: 0.4s opacity ease-in-out;
-  opacity: 1;
+  color: var(--primary-color);
+  transition: var(--transition-opacity);
+  opacity: var(--opacity-full);
 }
 
-.footer-link:hover {
-  opacity: 0.6;
+.footer-link:hover,
+.footer-svg_link:hover {
+  opacity: var(--opacity-hover);
 }
-.footer-link:active {
-  opacity: 0.4;
+.footer-link:active,
+.footer-svg_link:active {
+  opacity: var(--opacity-active);
 }
-.footer-link:disabled {
-  opacity: 0.2;
+.footer-link:disabled,
+.footer-svg_link:disabled {
+  opacity: var(--opacity-disabled);
 }
-.modal-footer-svg {
+.footer-svg_link {
   width: 40px;
   height: 40px;
+  transition: var(--transition-opacity);
+  opacity: var(--opacity-full);
 }
 
 @media (min-width: 768px) {
   .footer-nav_list {
     flex-direction: row;
   }
-  .modal-footer-svg {
+  .footer-svg_link {
     width: 24px;
     height: 24px;
   }
