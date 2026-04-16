@@ -6,6 +6,10 @@
   gap: var(--gap);
   margin-bottom: 40px;
 }
+.bouqets-item {
+  width: 335px;
+}
+
 .bouqets-btn {
   width: 100%;
   height: 44px;
@@ -13,6 +17,7 @@
 }
 .bouqets-item_img {
   height: 296px;
+  width: 100%;
   border-radius: var(--border-radius);
   background-color: var(--placeholder-bg);
   margin-bottom: 16px;
@@ -53,9 +58,7 @@
     flex-direction: row;
     flex-wrap: wrap;
   }
-  .bouqets-item_img {
-    width: 100%;
-  }
+
   .bouqets-item {
     width: 340px;
   }

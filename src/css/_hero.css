@@ -4,7 +4,7 @@
   background-image: url('../img/hero-image.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: -370px -15px;
+  background-position: center;
   padding: 48px 0;
 }
 .hero-header {
@@ -41,7 +41,6 @@
 @media (min-width: 768px) {
   .hero {
     padding: 152.5px 0;
-    background-position: -390px -15px;
   }
   .hero-header {
     font-size: 36px;
@@ -57,7 +56,6 @@
 @media (min-width: 1440px) {
   .hero {
     padding: 190.5px 0;
-    background-position: center;
   }
   .hero-header {
     font-size: 56px;
