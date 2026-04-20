@@ -1,11 +1,11 @@
 {
-  "name": "umt_practice",
+  "name": "fitnes_website",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base /UMT-markup-practice-Dymchevskyi/",
+    "build": "vite build --base /fitnes_website/",
     "preview": "vite preview"
   },
   "devDependencies": {
