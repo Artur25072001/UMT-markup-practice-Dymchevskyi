@@ -1,11 +1,18 @@
 @import 'variable.css';
 
 .hero {
-  background-image: url('../img/hero-image.jpg');
+  background-image: url('../img/hero-image@1x.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   padding: 48px 0;
+}
+@media screen and (min-device-pixel-ratio: 2),
+  screen and (min-resolution: 192dpi),
+  screen and (min-resolution: 2dppx) {
+  .hero {
+    background-image: url('../img/hero-image@2x.jpg');
+  }
 }
 .hero-header {
   margin-bottom: 24px;
